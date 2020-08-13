@@ -14,11 +14,42 @@ library(fst)
 library(measurements)
 library(XML)
 library(plyr)
+library(RCurl)
 
 setwd ("/Users/munshirasel/Google Drive/R/ampd-2/data")
 
+#downloading all files from EPA FTP site
+#ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/
 
-url = "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1995/"
+
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1995/", 
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1996/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1997/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1998/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1999/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2000/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2001/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2002/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2003/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2004/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2005/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2006/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2007/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2008/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2009/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2010/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2011/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2012/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2013/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2014/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2015/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2016/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2017/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2018/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2019/",
+        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2020/")
+
 filenames = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
 filenames <- strsplit(filenames, "\n")
 filenames = unlist(filenames)
