@@ -23,42 +23,436 @@ setwd ("/Users/munshirasel/Google Drive/R/ampd-2/data")
 
 
 
-url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1995/", 
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1996/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1997/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1998/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1999/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2000/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2001/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2002/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2003/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2004/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2005/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2006/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2007/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2008/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2009/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2010/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2011/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2012/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2013/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2014/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2015/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2016/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2017/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2018/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2019/",
-        "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2020/")
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1995/") 
+         # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1996/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1997/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1998/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1999/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2000/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2001/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2002/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2003/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2004/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2005/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2006/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2007/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2008/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2009/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2010/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2011/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2012/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2013/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2014/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2015/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2016/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2017/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2018/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2019/",
+        # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2020/")
 
-filenames = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
-filenames <- strsplit(filenames, "\n")
-filenames = unlist(filenames)
-filenames
 
-for (filename in filenames) {
-  download.file(paste(url, filename, sep = ""), paste(getwd(), "/", filename,
+
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
                                                       sep = ""))
 }
+
+
+#1996
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1996/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+
+
+
+####1997
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1997/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+
+#1998
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1998/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+
+
+#1999
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1999/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+#2000
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2000/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+
+###2001
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2001/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2002
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2002/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2003
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2003/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+#2004
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2004/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2005
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2005/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2006
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2006/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+
+#2007
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2007/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+
+
+#2008
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2008/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+
+#2009
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2009/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2010
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2010/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2011
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2011/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2012
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2012/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+#2013
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2013/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2014
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2014/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2015
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2015/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+#2016
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2016/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2017
+
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2017/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+#2018
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2018/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2019
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2019/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
+
+#2020
+url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/2020/") 
+
+emissions = getURL(url, ftp.use.epsv = FALSE, dirlistonly = TRUE)
+emissions <- strsplit(emissions, "\n")
+emissions = unlist(emissions)
+emissions
+
+
+for (i in emissions) {
+  download.file(paste(url, i, sep = ""), paste(getwd(), "/", i ,
+                                               sep = ""))
+}
+
 
 # get all the zip files
 zipF <- list.files(path = "/Users/munshirasel/Google Drive/R/ampd-2/data", 
@@ -75,5 +469,6 @@ csv_files <- list.files(path = "/Users/munshirasel/Google Drive/R/ampd-2/data",
 # read the csv files
  my_data <- ldply(.data = csv_files, .fun = read.csv)
 
+write.csv(my_data, "/Users/munshirasel/Google Drive/R/ampd-2/emissions-raw.csv")
 
-
+save(emissions, file = "/Users/munshirasel/Google Drive/R/ampd-2/emissions-raw.RData")
