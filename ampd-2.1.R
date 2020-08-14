@@ -454,7 +454,7 @@ for (i in emissions) {
 }
 
 
-# get all the zip files
+# getting all the zip files
 zipF <- list.files(path = "/Users/munshirasel/Google Drive/R/ampd-2/data", 
                    pattern = "*.zip", full.names = TRUE)
 
@@ -467,8 +467,8 @@ csv_files <- list.files(path = "/Users/munshirasel/Google Drive/R/ampd-2/data",
                         pattern = "*.csv")
 
 # read the csv files
- my_data <- ldply(.data = csv_files, .fun = read.csv)
+my_data <- ldply(.data = csv_files, .fun = read.csv)
 
 write.csv(my_data, "/Users/munshirasel/Google Drive/R/ampd-2/emissions-raw.csv")
 
-save(emissions, file = "/Users/munshirasel/Google Drive/R/ampd-2/emissions-raw.RData")
+save(my_data, file = "/Users/munshirasel/Google Drive/R/ampd-2/emissions-raw.RData")
