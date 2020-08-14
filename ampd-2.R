@@ -111,3 +111,6 @@ unzip(tmp_filename)
 e12 <- fread("DLY_1995ilQ4.csv")
 file.remove(tmp_filename)
 
+
+
+# this is not convenient to download files one by one. Please go to ampd-2.1R file.
