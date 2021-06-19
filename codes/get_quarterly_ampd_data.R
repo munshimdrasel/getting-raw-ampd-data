@@ -21,7 +21,9 @@ setwd ("/Users/munshirasel/Google Drive/R/get_data_ampd/data")
 #downloading all files from EPA FTP site
 #ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/
 
-
+# just run specific year's code 
+#sometimes EPA fst websites fail to download all data
+#double check your data
 
 url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1995/") 
          # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1996/",
