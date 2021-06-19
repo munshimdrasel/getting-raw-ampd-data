@@ -1,3 +1,5 @@
+#PART1: downloading and combining AMPD datasets
+
 library(ncdf4)
 library(data.table)
 library(tidyverse)
@@ -21,10 +23,21 @@ setwd ("/Users/munshirasel/Google Drive/R/get_data_ampd/data")
 #downloading all files from EPA FTP site
 #ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/
 
+# ====================================================================
+# Instructions:
 # just run specific year's code 
 #sometimes EPA fst websites fail to download all data
 #double check your data
 
+
+# -all the data are available on HAQ_LAB project directory of ARGO cluster (/projects/HAQ_LAB/data/ampd-data/ampd-data-download/data)
+# 
+# Don't try to run get_quarterly_ampd_data.R all at once (sometimes data from EPA fst website fail to download data for some reasons (may be poor connections??)): in the code (get_quarterly_ampd_data.R) just go to the specific year and download that year's data
+# for data check: look if you have 4 quarter's data from all states in that particular year (50 states: 4X50 =200 files/year)
+# data for Arkansas (AK) are available in recent years. before that 49 states data were available (49 states: 4X49 = 196 files/year)
+
+
+  # ====================================================================
 url = c("ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1995/") 
          # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1996/",
         # "ftp://newftp.epa.gov/DMDnLoad/emissions/daily/quarterly/1997/",
